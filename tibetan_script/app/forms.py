@@ -1,4 +1,4 @@
 from django import forms
 
-class TextInputForm(forms.Form):
-    orgin_text = forms.Textarea()
+class OriginInputForm(forms.Form):
+    orgin_text = forms.CharField ( widget=forms.widgets.Textarea() )

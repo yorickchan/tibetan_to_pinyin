@@ -1,7 +1,23 @@
 {% extends 'layout.html' %}
-
+{% load i18n static bootstrap4 %}
 
 {% block content %}
-<h1>Welcome</h1>
+<h1>{% trans 'Input origin tibetan script' %}.</h1>
+
+{# Display a form #}
+<form action="" method="post" class="form">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+  {% buttons %}
+    <button type="submit" class="btn btn-primary">
+        {% trans 'Submit' %}
+    </button>
+  {% endbuttons %}
+</form>
+<div class="row">
+    {% for line in output %}
+    <p>{{ line }}</p>
+    {% endfor %}
+</div>
 {% endblock content %}
     
